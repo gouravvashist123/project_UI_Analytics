@@ -1,0 +1,74 @@
+import React from "react";
+import "./HomePage.css";
+
+const usageSteps = [
+  {
+    id: 1,
+    icon: "📥",
+    title: "Download & Install",
+    description:
+      "Get the latest version of the application from our official website and install it on your device.",
+  },
+  {
+    id: 2,
+    icon: "🛠️",
+    title: "Set Up Your Profile",
+    description:
+      "Create and customize your profile to ensure personalized experience and settings.",
+  },
+  {
+    id: 3,
+    icon: "🚀",
+    title: "Start Using Features",
+    description:
+      "Explore the dashboard and use our powerful features to boost your productivity.",
+  },
+  {
+    id: 4,
+    icon: "🔧",
+    title: "Get Support",
+    description:
+      "Access our help center or contact support if you need assistance anytime.",
+  },
+];
+
+const HomePage = () => {
+  return (
+    <div className="home-page">
+      <header className="header">
+        <h1 className="app-name">AppName</h1>
+      </header>
+
+      <section className="hero-section">
+        <div className="hero-content">
+          <h2>Welcome to AppName</h2>
+          <p>
+            Your seamless solution to managing tasks efficiently and effortlessly.
+            Follow these simple steps to get started quickly.
+          </p>
+          <button className="cta-button">Get Started</button>
+        </div>
+      </section>
+
+      <section className="instructions-section">
+        <h3 className="section-title">How to Use</h3>
+
+        <div className="steps-grid">
+          {usageSteps.map(({ id, icon, title, description }) => (
+            <div key={id} className="step-card">
+              <div className="step-icon">{icon}</div>
+              <h4>{title}</h4>
+              <p>{description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <footer className="footer">
+        <p>© 2025 EE Dashboard. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default HomePage;
